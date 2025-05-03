@@ -36,3 +36,25 @@ def get_earthquake_data():
     
   
     return jsonify(raw_data)
+
+@earthquake_bp.route('/critical', methods=['GET'])
+def get_critical_data():
+    start_time = request.args.get('start_time')
+    end_time = request.args.get('end_time')
+    
+    # Validate required parameters
+    if not start_time or not end_time:
+        return jsonify({"error": "Both start_time and end_time parameters are required"}), 400
+    
+    # Fetch earthquake data with fixed parameters
+    raw_data = usgs_service.get_critical_earthquake_reported(
+        start_time, 
+        end_time
+    )
+    # print(raw_data)
+    
+    if raw_data is None:
+        return jsonify({"error": "Failed to fetch earthquake data"}), 500
+    
+  
+    return jsonify(raw_data)
