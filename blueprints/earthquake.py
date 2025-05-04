@@ -1,5 +1,8 @@
 # Earthquake API blueprint
 from flask import Blueprint, jsonify, request
+from datetime import datetime, timedelta
+import json
+
 from .utils.usgs_service import USGSService
 
 earthquake_bp = Blueprint('earthquake', __name__, url_prefix='/api/earthquake')
@@ -57,4 +60,30 @@ def get_critical_data():
         return jsonify({"error": "Failed to fetch earthquake data"}), 500
     
   
+    return jsonify(raw_data)
+
+@earthquake_bp.route("/tsunami", methods=["GET"])
+def get_tsunami_data():
+    date = request.args.get('date')
+    date = datetime.strptime(date, "%Y-%m-%d").date()
+    previous_date = date - timedelta(days=1)
+    previous_date = previous_date.strftime("%Y-%m-%d")
+    print(previous_date)
+
+    state = request.args.get('state')
+    state = state.lower()
+    state = state.replace(" ", "")
+    print(state)
+
+    if not date or not state:
+        return jsonify({"error": "Both start_time and state parameters are required"}), 400
+
+    raw_data = usgs_service.get_previous_date_tsunami_data(
+        previous_date,
+        state
+    )
+
+    if raw_data is None:
+        return jsonify({"error": "Failed to fetch earthquake data"}), 500
+
     return jsonify(raw_data)
