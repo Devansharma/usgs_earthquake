@@ -32,6 +32,11 @@ spec:
       containers:
       - image: devansharma92/usgs-api-earthquake:v2.0
         name: usgs-api-earthquake
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+        imagePullPolicy: Always
 
 ---
 apiVersion: v1
