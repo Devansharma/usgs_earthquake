@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+
+kind: Namespace
+
+metadata:
+  name: usgs
+
+spec: {}
+
+---
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  labels:
+    app: usgs-api
+  name: usgs-api
+  namespace: usgs
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: usgs-api
+  template:
+    metadata:
+      labels:
+        app: usgs-api
+    spec:
+      containers:
+      - image: devansharma92/usgs-api-earthquake:v2.0
+        name: usgs-api-earthquake
+
+---
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: usgs-service
+  namespace: usgs
+
+spec:
+  type: NodePort
+  selector:
+    app: usgs-api
+  ports:
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30007
