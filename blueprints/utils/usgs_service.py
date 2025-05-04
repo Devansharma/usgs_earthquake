@@ -26,7 +26,7 @@ class USGSService:
 
         try:
             response = requests.get(url, params=params, timeout=10)
-            print("##########",response.status_code)
+            # print("##########",response.status_code)
             if response.status_code == 200:
                 earthquake_data = response.json()
                 return earthquake_data
@@ -167,7 +167,7 @@ class USGSService:
             'format': 'geojson'
         }
 
-        print(params)
+        # print(params)
 
         earthquake_data = self.hit_usgs_api(params)
 

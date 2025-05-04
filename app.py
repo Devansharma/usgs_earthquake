@@ -1,5 +1,6 @@
 # Main application entry point
 from flask import Flask, jsonify
+
 from blueprints.earthquake import earthquake_bp
 
 def create_app():
@@ -13,7 +14,9 @@ def create_app():
     def index():
         return jsonify({
             "service": "USGS Earthquake API",
-            "endpoint": "/api/earthquake/data?start_time=YYYY-MM-DD&end_time=YYYY-MM-DD"
+            "endpoint1": "/api/earthquake/data?start_time=YYYY-MM-DD&end_time=YYYY-MM-DD",
+            "endpoint2": "/api/earthquake/critical?start_time=YYYY-MM-DD&end_time=YYYY-MM-DD",
+            "endpoint3": "/api/earthquake/tsunami?date=YYYY-MM-DD&state=state_name"
         })
     
     # Error handlers
