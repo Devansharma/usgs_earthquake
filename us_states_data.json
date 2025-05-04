@@ -1,0 +1,354 @@
+{
+  "states": [
+    {
+      "state": "Alabama",
+      "minlatitude": 30.145127,
+      "minlongitude": -88.473227,
+      "maxlatitude": 35.008028,
+      "maxlongitude": -84.888246
+    },
+    {
+      "state": "Alaska",
+      "minlatitude": 51.175092,
+      "minlongitude": -179.148909,
+      "maxlatitude": 71.441059,
+      "maxlongitude": -129.974525
+    },
+    {
+      "state": "Arizona",
+      "minlatitude": 31.332177,
+      "minlongitude": -114.818710,
+      "maxlatitude": 37.004260,
+      "maxlongitude": -109.045223
+    },
+    {
+      "state": "Arkansas",
+      "minlatitude": 33.004106,
+      "minlongitude": -94.617919,
+      "maxlatitude": 36.499767,
+      "maxlongitude": -89.644395
+    },
+    {
+      "state": "California",
+      "minlatitude": 32.528832,
+      "minlongitude": -124.482003,
+      "maxlatitude": 42.009517,
+      "maxlongitude": -114.131211
+    },
+    {
+      "state": "Colorado",
+      "minlatitude": 36.992426,
+      "minlongitude": -109.060253,
+      "maxlatitude": 41.003444,
+      "maxlongitude": -102.041524
+    },
+    {
+      "state": "Connecticut",
+      "minlatitude": 40.980144,
+      "minlongitude": -73.727775,
+      "maxlatitude": 42.050587,
+      "maxlongitude": -71.786994
+    },
+    {
+      "state": "Delaware",
+      "minlatitude": 38.451013,
+      "minlongitude": -75.788658,
+      "maxlatitude": 39.839007,
+      "maxlongitude": -75.048939
+    },
+    {
+      "state": "Florida",
+      "minlatitude": 24.396308,
+      "minlongitude": -87.634938,
+      "maxlatitude": 31.000888,
+      "maxlongitude": -80.031362
+    },
+    {
+      "state": "Georgia",
+      "minlatitude": 30.355757,
+      "minlongitude": -85.605165,
+      "maxlatitude": 35.000659,
+      "maxlongitude": -80.839729
+    },
+    {
+      "state": "Hawaii",
+      "minlatitude": 18.910361,
+      "minlongitude": -178.334698,
+      "maxlatitude": 28.402123,
+      "maxlongitude": -154.806773
+    },
+    {
+      "state": "Idaho",
+      "minlatitude": 41.988057,
+      "minlongitude": -117.243027,
+      "maxlatitude": 49.001146,
+      "maxlongitude": -111.043564
+    },
+    {
+      "state": "Illinois",
+      "minlatitude": 36.970298,
+      "minlongitude": -91.513079,
+      "maxlatitude": 42.508481,
+      "maxlongitude": -87.494756
+    },
+    {
+      "state": "Indiana",
+      "minlatitude": 37.771742,
+      "minlongitude": -88.097892,
+      "maxlatitude": 41.760592,
+      "maxlongitude": -84.784579
+    },
+    {
+      "state": "Iowa",
+      "minlatitude": 40.375501,
+      "minlongitude": -96.639704,
+      "maxlatitude": 43.501196,
+      "maxlongitude": -90.140061
+    },
+    {
+      "state": "Kansas",
+      "minlatitude": 36.993016,
+      "minlongitude": -102.051744,
+      "maxlatitude": 40.003162,
+      "maxlongitude": -94.588413
+    },
+    {
+      "state": "Kentucky",
+      "minlatitude": 36.497129,
+      "minlongitude": -89.571203,
+      "maxlatitude": 39.147458,
+      "maxlongitude": -81.964971
+    },
+    {
+      "state": "Louisiana",
+      "minlatitude": 28.855127,
+      "minlongitude": -94.043147,
+      "maxlatitude": 33.019457,
+      "maxlongitude": -88.817017
+    },
+    {
+      "state": "Maine",
+      "minlatitude": 43.064817,
+      "minlongitude": -71.084497,
+      "maxlatitude": 47.459686,
+      "maxlongitude": -66.949895
+    },
+    {
+      "state": "Maryland",
+      "minlatitude": 37.911717,
+      "minlongitude": -79.487651,
+      "maxlatitude": 39.723043,
+      "maxlongitude": -75.048939
+    },
+    {
+      "state": "Massachusetts",
+      "minlatitude": 41.237964,
+      "minlongitude": -73.508142,
+      "maxlatitude": 42.886589,
+      "maxlongitude": -69.928393
+    },
+    {
+      "state": "Michigan",
+      "minlatitude": 41.696118,
+      "minlongitude": -90.418136,
+      "maxlatitude": 48.306063,
+      "maxlongitude": -82.122971
+    },
+    {
+      "state": "Minnesota",
+      "minlatitude": 43.499356,
+      "minlongitude": -97.239209,
+      "maxlatitude": 49.384358,
+      "maxlongitude": -89.491739
+    },
+    {
+      "state": "Mississippi",
+      "minlatitude": 30.173943,
+      "minlongitude": -91.655009,
+      "maxlatitude": 34.996052,
+      "maxlongitude": -88.097888
+    },
+    {
+      "state": "Missouri",
+      "minlatitude": 35.995683,
+      "minlongitude": -95.774704,
+      "maxlatitude": 40.613640,
+      "maxlongitude": -89.098843
+    },
+    {
+      "state": "Montana",
+      "minlatitude": 44.358221,
+      "minlongitude": -116.050003,
+      "maxlatitude": 49.001390,
+      "maxlongitude": -104.039138
+    },
+    {
+      "state": "Nebraska",
+      "minlatitude": 39.999998,
+      "minlongitude": -104.053514,
+      "maxlatitude": 43.001708,
+      "maxlongitude": -95.308290
+    },
+    {
+      "state": "Nevada",
+      "minlatitude": 35.001857,
+      "minlongitude": -120.005746,
+      "maxlatitude": 42.002207,
+      "maxlongitude": -114.039648
+    },
+    {
+      "state": "NewHampshire",
+      "minlatitude": 42.696952,
+      "minlongitude": -72.557247,
+      "maxlatitude": 45.305476,
+      "maxlongitude": -70.610621
+    },
+    {
+      "state": "NewJersey",
+      "minlatitude": 38.928519,
+      "minlongitude": -75.559614,
+      "maxlatitude": 41.357423,
+      "maxlongitude": -73.893979
+    },
+    {
+      "state": "NewMexico",
+      "minlatitude": 31.332301,
+      "minlongitude": -109.050173,
+      "maxlatitude": 37.000232,
+      "maxlongitude": -103.001964
+    },
+    {
+      "state": "NewYork",
+      "minlatitude": 40.496103,
+      "minlongitude": -79.762152,
+      "maxlatitude": 45.015861,
+      "maxlongitude": -71.856214
+    },
+    {
+      "state": "NorthCarolina",
+      "minlatitude": 33.842316,
+      "minlongitude": -84.321869,
+      "maxlatitude": 36.588117,
+      "maxlongitude": -75.460621
+    },
+    {
+      "state": "NorthDakota",
+      "minlatitude": 45.935054,
+      "minlongitude": -104.048881,
+      "maxlatitude": 49.000574,
+      "maxlongitude": -96.554507
+    },
+    {
+      "state": "Ohio",
+      "minlatitude": 38.403202,
+      "minlongitude": -84.820159,
+      "maxlatitude": 41.977523,
+      "maxlongitude": -80.518693
+    },
+    {
+      "state": "Oklahoma",
+      "minlatitude": 33.615833,
+      "minlongitude": -103.002565,
+      "maxlatitude": 37.002206,
+      "maxlongitude": -94.430662
+    },
+    {
+      "state": "Oregon",
+      "minlatitude": 41.991794,
+      "minlongitude": -124.566244,
+      "maxlatitude": 46.292035,
+      "maxlongitude": -116.463504
+    },
+    {
+      "state": "Pennsylvania",
+      "minlatitude": 39.719798,
+      "minlongitude": -80.519891,
+      "maxlatitude": 42.269860,
+      "maxlongitude": -74.689516
+    },
+    {
+      "state": "RhodeIsland",
+      "minlatitude": 41.146339,
+      "minlongitude": -71.862772,
+      "maxlatitude": 42.018798,
+      "maxlongitude": -71.120132
+    },
+    {
+      "state": "SouthCarolina",
+      "minlatitude": 32.034550,
+      "minlongitude": -83.353928,
+      "maxlatitude": 35.215402,
+      "maxlongitude": -78.499301
+    },
+    {
+      "state": "SouthDakota",
+      "minlatitude": 42.479635,
+      "minlongitude": -104.057698,
+      "maxlatitude": 45.945362,
+      "maxlongitude": -96.436589
+    },
+    {
+      "state": "Tennessee",
+      "minlatitude": 34.982972,
+      "minlongitude": -90.310298,
+      "maxlatitude": 36.678118,
+      "maxlongitude": -81.646946
+    },
+    {
+      "state": "Texas",
+      "minlatitude": 25.837377,
+      "minlongitude": -106.645646,
+      "maxlatitude": 36.500704,
+      "maxlongitude": -93.508292
+    },
+    {
+      "state": "Utah",
+      "minlatitude": 36.997968,
+      "minlongitude": -114.052962,
+      "maxlatitude": 42.001567,
+      "maxlongitude": -109.041058
+    },
+    {
+      "state": "Vermont",
+      "minlatitude": 42.726853,
+      "minlongitude": -73.437741,
+      "maxlatitude": 45.016659,
+      "maxlongitude": -71.464555
+    },
+    {
+      "state": "Virginia",
+      "minlatitude": 36.540738,
+      "minlongitude": -83.675395,
+      "maxlatitude": 39.466012,
+      "maxlongitude": -75.242266
+    },
+    {
+      "state": "Washington",
+      "minlatitude": 45.543541,
+      "minlongitude": -124.763068,
+      "maxlatitude": 49.002494,
+      "maxlongitude": -116.915989
+    },
+    {
+      "state": "WestVirginia",
+      "minlatitude": 37.201483,
+      "minlongitude": -82.644739,
+      "maxlatitude": 40.638801,
+      "maxlongitude": -77.719519
+    },
+    {
+      "state": "Wisconsin",
+      "minlatitude": 42.491983,
+      "minlongitude": -92.888114,
+      "maxlatitude": 47.080621,
+      "maxlongitude": -86.805415
+    },
+    {
+      "state": "Wyoming",
+      "minlatitude": 40.994746,
+      "minlongitude": -111.056888,
+      "maxlatitude": 45.005904,
+      "maxlongitude": -104.052154
+    }
+  ]
+}
