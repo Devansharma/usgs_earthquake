@@ -119,14 +119,10 @@ Each event in the `earthquake_data` array contains the following fields:
 ## New extended APIs
 
 1. Retrieve all earthquakes M2.0+ for the San Francisco Bay Area during a specific time range.
-    
     ```/api/earthquake/data```
-    
     Arguments required API
     ```/api/earthquake/data?start_time=YYYY-MM-DD&end_time=YYYY-MM-DD```
-    
     eg: 
-    
     ```sh
     curl "http://<NodeIP/hostname>:30007/api/earthquake/data?start_time=2023-01-25&end_time=2023-01-31"
     ```
@@ -151,14 +147,10 @@ Each event in the `earthquake_data` array contains the following fields:
 
 
 2. Retrieve all earthquakes M2.0+ that have 10+ felt reports for the San Francisco Bay Area during a specific time range.
-    
     ```/api/earthquake/critical```
-    
     Arguments required API
     ```/api/earthquake/critical?start_time=YYYY-MM-DD&end_time=YYYY-MM-DD```
-   
     eg: 
-    
     ```sh
     curl "http://<NodeIP/hostname>:30007/api/earthquake/critical?start_time=2023-01-23&end_time=2023-01-31"
     ```
@@ -182,15 +174,10 @@ Each event in the `earthquake_data` array contains the following fields:
     ```
     
 3. Retrieve all earthquakes M2.0+ for the past day that had tsunami alerts for any given [US state](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States).
-    
     ```/api/earthquake/tsunami```
-    
     Arguments required API
-    
     ```/api/earthquake/tsunami?date=YYYY-MM-DD&state=state_name```
-    
     eg: 
-    
     ```sh
     curl "http://<NodeIP/hostname>:30007/api/earthquake/tsunami?date=2014-02-26&state=alaska"
     ```
@@ -214,5 +201,21 @@ Each event in the `earthquake_data` array contains the following fields:
     ```
     > For ```/api/earthquake/tsunami``` if the state name consists of a white space like ```New Mexico```, it should be passed as ```NewMexico```
     
-## USGS API Hit Limiter
-A request cannot be made to the USGS service more than once within a 30 second interval. Instead, the system stores the request parameters and their corresponding response, and if the same request is made again within that time frame, it returns the previously saved response.
+## Addional Functionalities
+
+1. Endpoint for health check.
+
+   ```api/earthquake/health```
+
+    This API returns a json object as:
+    
+    ```json
+    {
+        "status": "healthy"
+    }
+    ```
+    
+2. Custom metrics using prometheus client: THis contains counter prometheus metric that keeps count of total requests to the endpoints and also the number of success and failed API requests
+    ```api/earthquake/metrics```
+    This API returns a prometheus text document
+    

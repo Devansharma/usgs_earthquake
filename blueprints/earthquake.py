@@ -1,12 +1,31 @@
 # Earthquake API blueprint
 from flask import Blueprint, jsonify, request
 from datetime import datetime, timedelta
+from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 import json
 
 from .utils.usgs_service import USGSService
 
 earthquake_bp = Blueprint('earthquake', __name__, url_prefix='/api/earthquake')
 usgs_service = USGSService()
+
+http_requests_total = Counter(
+    'http_requests_total',
+    'Total HTTP Requests by method and endpoint',
+    ['method', 'endpoint', 'status']
+)
+
+@earthquake_bp.before_request
+def before_request():
+    http_requests_total.labels(request.method, request.path, 'pending').inc()
+
+@earthquake_bp.after_request
+def after_request(response):
+    if response.status_code == 200:
+        http_requests_total.labels(request.method, request.path, 'success').inc()
+    else:
+        http_requests_total.labels(request.method, request.path, 'failure').inc()
+    return response
 
 @earthquake_bp.route('/data', methods=['GET'])
 def get_earthquake_data():
@@ -124,3 +143,11 @@ def get_tsunami_data():
         return jsonify({"error": "Failed to fetch earthquake data"}), 500
 
     return jsonify(raw_data)
+
+@earthquake_bp.route("/health", methods=["GET"])
+def health_check():
+    return {"status": "healthy"}
+
+@earthquake_bp.route('/metrics')
+def metrics():
+    return generate_latest(), 200, {'Content-Type': CONTENT_TYPE_LATEST}
