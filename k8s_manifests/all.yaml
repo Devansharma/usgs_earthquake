@@ -61,3 +61,27 @@ spec:
     - port: 8000
       targetPort: 8000
       nodePort: 30007
+
+---
+apiVersion: autoscaling/v2
+
+kind: HorizontalPodAutoscaler
+
+metadata:
+  name: usgs-api-hpa
+  namespace: usgs
+
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: usgs-api
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 75

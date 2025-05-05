@@ -70,16 +70,26 @@ For the states co-ordinates we have taken rectangular co-ordinates as following:
     ```sh
     git clone https://github.com/Devansharma/usgs_earthquake.git
     ```
-2. Start the deployment on the Kubernetes cluster
+2. Install metrics server on the cluster and disable TLS connection
+    ```sh
+    kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+    kubectl patch deployment metrics-server -n kube-system   --type='json' -p='[{"op":"add","path":"/spec/template/spec/containers/0/args/-","value":"--kubelet-insecure-tls"}]'
+    ```
+3. Start the deployment on the Kubernetes cluster
     ```sh
     cd usgs_earthquake
     kubectl apply -f k8s_manifests/all.yaml
     ```
     This will create the deployment as well as nodeport service on nodeport `30007`
     
-3. Check the status of the pods, all pods should be in running state
+4. Check the status of the pods, all pods should be in running state
     ```sh
     kubectl get pods -n usgs
+    ```
+    
+5. Check the status of the HPA
+    ```sh
+    kubectl get hpa -n usgs
     ```
 ## API Response Structure
 ### Response Format
@@ -219,3 +229,4 @@ Each event in the `earthquake_data` array contains the following fields:
     ```api/earthquake/metrics```
     This API returns a prometheus text document
     
+3. Added Horizontal Pod Scaling which monitors the CPU Utlization, and scales the pods when CPU Utilization increases by 75%. Minimum Replicas have been set to 2 and maximum till 5
