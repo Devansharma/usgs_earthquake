@@ -30,13 +30,19 @@ spec:
         app: usgs-api
     spec:
       containers:
-      - image: devansharma92/usgs-api-earthquake:v2.0
+      - image: devansharma92/usgs-api-earthquake:v4.0
         name: usgs-api-earthquake
         resources:
           requests:
             cpu: "100m"
             memory: "128Mi"
         imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /api/earthquake/health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
 
 ---
 apiVersion: v1
