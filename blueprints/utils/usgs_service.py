@@ -2,6 +2,7 @@
 import requests
 import os
 import json
+import time
 
 class USGSService:
     """Service for interacting with the USGS Earthquake API."""
@@ -10,6 +11,7 @@ class USGSService:
         self.api_config = {
             "base_url": "https://earthquake.usgs.gov/fdsnws/event/1/query"
         }
+        self.recent_requests = []
 
     def hit_usgs_api(self, params):
 
@@ -24,11 +26,27 @@ class USGSService:
 
         url = self.api_config['base_url']
 
+        # return the reponse if time difference are less than 30 s
+        current_time = time.time()
+        for saved_params, timestamp, saved_response in self.recent_requests:
+            if saved_params == params and current_time - timestamp < 30:
+                print("Using local cache")
+                return saved_response
+
         try:
             response = requests.get(url, params=params, timeout=10)
             # print("##########",response.status_code)
             if response.status_code == 200:
                 earthquake_data = response.json()
+                self.recent_requests.append((params.copy(), current_time, earthquake_data))
+
+                # Cleanup the local cahe for more than 30 sec
+                request_cleanup = []
+                for p, t, r in self.recent_requests:
+                    if current_time - t < 30:
+                        request_cleanup.append((p, t, r))
+                self.recent_requests = request_cleanup
+
                 return earthquake_data
             else:
                 return None
